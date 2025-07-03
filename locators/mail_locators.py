@@ -11,7 +11,7 @@ class MailLocator:
     SIGNATURE_INPUT = (By.XPATH, "//body[@id='tinymce']/p")
     SIGNATURE_SAVE = (By.XPATH, "//button[contains(@data-ng-click, 'saveSignature($event)') and contains(., 'Save')]")
 
-    SIGNATURE_LIST_ITEMS = (By.XPATH, "//*[@id='settingSignatureController']/div[2]/ul")
+    SIGNATURE_LIST_ITEMS = (By.XPATH, "//*[@id='settingSignatureController']/div[2]/ul/li")
     DELETE_SIGNATURE = (By.XPATH, "//div[@id='settingSignatureController']/div[2]/ul/li/label/span")
     DELETE_SIGNATURE_CONFIRM = (By.XPATH, "//*[@id='settingSignatureController']//button[contains(@data-ng-click, 'deleteSigSelected()') and contains(., 'Delete')]")
 

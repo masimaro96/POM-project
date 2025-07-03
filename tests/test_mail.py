@@ -22,15 +22,14 @@ def mail_settings_page(login):
     page.load()
     page.go_to_setting()
     close_html_popup(driver)  # Đóng popup nếu có sau khi login
+    page.go_to_signature_tab()
+    page.add_text_signature("Test signature -" + str(int(time.time())))  # Thêm chữ ký ban đầu để có thể kiểm tra
     return page
 
 # Test này kiểm tra việc truy cập vào tab "Signature" thành công.
-def test_access_signature_tab(mail_settings_page):
-    """
-    Kiểm tra xem sau khi vào Settings, có thể click vào tab Signature hay không.
-    """
-    mail_settings_page.go_to_signature_tab()
+def test_access_signature_tab(mail_settings_page): 
     try:
+        mail_settings_page.go_to_signature_tab()
         WebDriverWait(mail_settings_page.driver, 10).until(
             EC.visibility_of_element_located(M.BUTTON_SIGNATURE_ADD)
         )
@@ -43,10 +42,8 @@ def test_access_signature_tab(mail_settings_page):
 
 # Test này kiểm tra chức năng thêm chữ ký mới.
 def test_add_new_signature(mail_settings_page):
-    """
-    Kiểm tra chức năng thêm một chữ ký mới.
-    """
-    mail_settings_page.go_to_signature_tab()
+    signature_text = "Test signature -" + str(int(time.time()))
+    
     # Chờ nút "Add" xuất hiện rõ ràng trước khi thao tác
     try:
         WebDriverWait(mail_settings_page.driver, 10).until(
@@ -56,11 +53,14 @@ def test_add_new_signature(mail_settings_page):
         Logging(f"test_add_new_signature: Fail - Không tìm thấy nút Add: {e}")
         assert False, f"Không tìm thấy nút Add: {e}"
 
-    signature_text = "Test signature -" + str(int(time.time()))
-    count_before = mail_settings_page.get_signature_count()
-    mail_settings_page.add_text_signature(signature_text)
-    count_after = mail_settings_page.get_signature_count()
-    # Assert: Kiểm tra số lượng chữ ký đã tăng lên 1.
-    result = (count_after == count_before + 1)
+    try:
+        count_before = mail_settings_page.get_signature_count()
+        mail_settings_page.add_text_signature(signature_text)
+        count_after = mail_settings_page.get_signature_count()
+        # Assert: Kiểm tra số lượng chữ ký đã tăng lên 1.
+        result = (count_after == count_before + 1)
+    except Exception as e:
+        Logging(f"test_add_new_signature: Fail - Tạo không thành công: {e}")
+        assert False, f"Tạo không thành công: {e}"
     Logging(f"test_add_new_signature: {'Pass' if result else 'Fail'}")
     assert result

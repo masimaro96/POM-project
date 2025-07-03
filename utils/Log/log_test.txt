@@ -1,40 +1,17 @@
-Login pass
-Login pass
 test_access_signature_tab: Pass
-test_access_signature_tab: Fail - Message: 
+test_add_new_signature: Fail - Tạo không thành công: Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=138.0.7204.49)
 Stacktrace:
 	GetHandleVerifier [0x0x3c4553+62419]
 	GetHandleVerifier [0x0x3c4594+62484]
 	(No symbol) [0x0x202133]
-	(No symbol) [0x0x24a8fe]
-	(No symbol) [0x0x24ac9b]
-	(No symbol) [0x0x293052]
-	(No symbol) [0x0x26f4b4]
-	(No symbol) [0x0x29087a]
-	(No symbol) [0x0x26f266]
-	(No symbol) [0x0x23e852]
-	(No symbol) [0x0x23f6f4]
-	GetHandleVerifier [0x0x634833+2619059]
-	GetHandleVerifier [0x0x62fc4a+2599626]
-	GetHandleVerifier [0x0x3eb0fa+221050]
-	GetHandleVerifier [0x0x3db378+156152]
-	GetHandleVerifier [0x0x3e1d2d+183213]
-	GetHandleVerifier [0x0x3cc438+94904]
-	GetHandleVerifier [0x0x3cc5c2+95298]
-	GetHandleVerifier [0x0x3b771a+9626]
-	BaseThreadInitThunk [0x0x7555fcc9+25]
-	RtlGetAppContainerNamedObjectPath [0x0x771b82ae+286]
-	RtlGetAppContainerNamedObjectPath [0x0x771b827e+238]
-
-test_access_signature_tab: Fail - Message: 
-Stacktrace:
-	GetHandleVerifier [0x0x3c4553+62419]
-	GetHandleVerifier [0x0x3c4594+62484]
-	(No symbol) [0x0x202133]
-	(No symbol) [0x0x24a8fe]
-	(No symbol) [0x0x24ac9b]
-	(No symbol) [0x0x293052]
-	(No symbol) [0x0x26f4b4]
+	(No symbol) [0x0x208909]
+	(No symbol) [0x0x20ac7a]
+	(No symbol) [0x0x20acf7]
+	(No symbol) [0x0x245b38]
+	(No symbol) [0x0x26f46c]
+	(No symbol) [0x0x240054]
+	(No symbol) [0x0x26f6e4]
 	(No symbol) [0x0x29087a]
 	(No symbol) [0x0x26f266]
 	(No symbol) [0x0x23e852]
@@ -52,21 +29,4 @@ Stacktrace:
 	RtlGetAppContainerNamedObjectPath [0x0x771b827e+238]
 
 test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_add_new_signature: Fail
-test_access_signature_tab: Pass
-test_access_signature_tab: Pass
-test_add_new_signature: Fail
-test_access_signature_tab: Pass
-test_add_new_signature: Fail
+test_add_new_signature: Pass
